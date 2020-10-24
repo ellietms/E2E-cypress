@@ -2,6 +2,7 @@ describe("Text box with max characters" , () => {
     // Define the test
     it("displays the appropriate remaining characters count" , (() => {
         cy.visit("http://localhost:3000/example-2")
+        
         cy.get("span")
             .invoke("text")
             .should("equal",'15');
@@ -9,11 +10,13 @@ describe("Text box with max characters" , () => {
         cy.get('input').type('hello');
 
         cy.get('span')
+            
             .invoke('text')
             .should('equal', '10');
         cy.get('input').type(' my friend');
 
         cy.get('span')
+            
             .invoke('text')
             .should('equal', '0');
 
